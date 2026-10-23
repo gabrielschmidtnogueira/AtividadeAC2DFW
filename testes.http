@@ -1,0 +1,44 @@
+### 1. Listar todos os clientes
+GET http://localhost:3000/clientes
+
+### 2. Buscar cliente por ID
+GET http://localhost:3000/clientes/1
+
+### 3. Listar pedidos do cliente
+GET http://localhost:3000/clientes/1/pedidos
+
+### 4. Atualizar dados do cliente 2
+PUT http://localhost:3000/clientes/2
+Content-Type: application/json
+
+{
+  "nome": "Bruno Lima Atualizado",
+  "cidade": "Sorocaba"
+}
+
+### 5. Adicionar pedido ao cliente 1
+POST http://localhost:3000/clientes/1/pedidos
+Content-Type: application/json
+
+{
+  "codigo": "P010",
+  "produto": "Fone de ouvido",
+  "quantidade": 2
+}
+
+### 6. Listar clientes de Sorocaba (execute depois do PUT acima)
+GET http://localhost:3000/clientes/cidade/Sorocaba
+
+### 7. Atualizar ID inexistente (deve responder 404 e "Id não existente")
+PUT http://localhost:3000/clientes/999
+Content-Type: application/json
+
+{
+  "nome": "Teste"
+}
+
+### 8. Remover cliente 3
+DELETE http://localhost:3000/clientes/3
+
+### 9. Repetir a remoção para demonstrar ID inexistente
+DELETE http://localhost:3000/clientes/3
