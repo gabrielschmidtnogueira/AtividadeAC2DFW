@@ -43,7 +43,7 @@ exports.obterClientePorId = (req, res) => {
 
   res.json(cliente);
 };
-a;
+
 exports.listarPedidosCliente = (req, res) => {
   const cliente = encontrarCliente(req.params.id);
 

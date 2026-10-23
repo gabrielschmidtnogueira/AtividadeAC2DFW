@@ -10,11 +10,6 @@ app.use((req, res) => {
   res.status(404).json({ mensagem: "Rota não encontrada" });
 });
 
-if (require.main === module) {
-  const PORTA = process.env.PORT || 3000;
-  app.listen(PORTA, () => {
-    console.log(`Servidor rodando na porta ${PORTA}`);
-  });
-}
-
-module.exports = app;
+app.listen(3000, () => {
+  console.log("Servidor rodando na porta 3000");
+});
